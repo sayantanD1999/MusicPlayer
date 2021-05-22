@@ -1,0 +1,86 @@
+[
+    {
+        "name": "Chori Chori",
+        "artist": "Sonu Nigam",
+        "link": "songs/Chori.mp3",
+        "genre": "Hindi",
+        "img": "images/lucky.jpg"
+    },
+    {
+        "name": "Neel Digante",
+        "artist": "Shreya Ghosal",
+        "link": "songs/Neel.mp3",
+        "genre": "Bengali",
+        "img": "images/neel.jpg"
+    },
+    {
+        "name": "Phir Wohi Raat Hai",
+        "artist": "Kishore Kumar",
+        "link": "songs/Phir-Wohi.mp3",
+        "genre": "Hindi",
+        "img": "images/phirwohi.jpg"
+    },
+    {
+        "name": "Yeh Dil Deewana",
+        "artist": "Sonu Nigam",
+        "link": "songs/Yeh-Dil-Deewana.mp3",
+        "genre": "Hindi",
+        "img": "images/pardes.jpg"
+    },
+    {
+        "name": "Sundori Komola",
+        "artist": "Folk",
+        "link": "songs/Sundori.m4A",
+        "genre": "Bengali",
+        "img": "images/Sundori.jpg"
+    },
+    {
+        "name": "Believer",
+        "artist": "Imagine Dragons",
+        "link": "songs/Believer.mp3",
+        "genre": "English",
+        "img": "images/believer.png"
+    },
+    {
+        "name": "Kalo Jole",
+        "artist": "Folk",
+        "link": "songs/Kalo.mp3",
+        "genre": "Bengali",
+        "img": "images/kalo.jpg"
+    },
+    {
+        "name": "Take My Breathe Away",
+        "artist": "Berlin",
+        "link": "songs/Berlin.mp3",
+        "genre": "English",
+        "img": "images/topgun.jpeg"
+    },
+    {
+        "name": "Senorita",
+        "artist": "Camila Cabello",
+        "link": "songs/senorita.mp3",
+        "genre": "English",
+        "img": "images/senorita.jpg"
+    },
+    {
+        "name": "Mon Majhi Re",
+        "artist": "Arijit Singh",
+        "link": "songs/Mon.mp3",
+        "genre": "Bengali",
+        "img": "images/mon.jpg"
+    },
+    {
+        "name": "Tum Hi Ho",
+        "artist": "Arijit Singh",
+        "link": "songs/Tum.mp3",
+        "genre": "Hindi",
+        "img": "images/bade.jpg"
+    },
+    {
+        "name": "Perfect",
+        "artist": "Ed Sheeran",
+        "link": "songs/Perfect.mp3",
+        "genre": "English",
+        "img": "images/perfect.jpg"
+    }
+]
