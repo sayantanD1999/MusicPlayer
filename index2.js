@@ -375,9 +375,12 @@ function media(e, val) {
             //console.log(track);
             let getTime = track.currentTime;
             let getDuration = track.duration;
-            let min = Math.floor(getTime / 60);
-            let sec = parseInt(getTime - (min * 60));
-            div.querySelector("#setTime").innerHTML = min + ":" + sec;
+            let time = new Date(getTime*1000);
+            // let min = Math.floor(getTime / 60);
+            // let sec = parseInt(getTime - (min * 60));
+            min = time.getUTCMinutes();
+            sec = time.getSeconds();
+            div.querySelector("#setTime").innerHTML = min.toString().padStart(2, '0') + ":" + sec.toString().padStart(2, '0');
             let min2 = Math.floor(getDuration / 60);
             let sec2 = parseInt(getDuration - (min2 * 60));
             //console.log(min2,sec2)
