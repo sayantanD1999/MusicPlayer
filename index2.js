@@ -75,16 +75,16 @@ window.onload = () => {
             </div>
             `
             document.body.innerHTML += buttomPlayer;
-            
+
             var ele = document.querySelectorAll(".mySlides .card");
             console.log(ele[0])
             for (let i = 0; i < ele.length; i++) {
                 console.log(1);
                 allContent.push(ele[i]);
             }
-        
-            
-        
+
+
+
         }
     }
 
@@ -216,10 +216,9 @@ function bottomBackward(e) {
     var currDiv;
     for (let i = 0; i < allContent.length; i++) {
         console.log(allContent[i])
-        if(allContent[i].querySelector(".card-body #name").innerHTML==name)
-        {
-          currDiv = allContent[i];
-          console.log(currDiv)
+        if (allContent[i].querySelector(".card-body #name").innerHTML == name) {
+            currDiv = allContent[i];
+            console.log(currDiv)
         }
     }
     var currTrack = currDiv.querySelector(".card-body #myaudio");
@@ -228,31 +227,27 @@ function bottomBackward(e) {
         var song = allContent[i].querySelector(".card-body #name").innerHTML;
         if (song == name) {
             if (i == 0) {
-                if(currTime>5)
-                {
-                    currTrack.currentTime=0;
+                if (currTime > 5) {
+                    currTrack.currentTime = 0;
                     currTrack.play();
                     currDiv.querySelector(".card-body #controls #play").className = "fas fa-pause";
                 }
-                else
-                {
+                else {
                     allContent[len - 1].querySelector(".card-body #controls #play").click();
                     let getName = allContent[len - 1].querySelector(".card-body #name").innerHTML;
                     div.querySelector("#setName").innerHTML = getName;
                 }
             }
             else {
-                if(currTime>5)
-                {
-                    currTrack.currentTime=0;
+                if (currTime > 5) {
+                    currTrack.currentTime = 0;
                     currTrack.play();
                     currDiv.querySelector(".card-body #controls #play").className = "fas fa-pause";
                 }
-                else
-                {
+                else {
                     allContent[i - 1].querySelector(".card-body #controls #play").click();
                     let getName = allContent[i - 1].querySelector(".card-body #name").innerHTML;
-                    div.querySelector("#setName").innerHTML = getName;                
+                    div.querySelector("#setName").innerHTML = getName;
                 }
             }
         }
@@ -314,14 +309,13 @@ function backward(e, n) {
     console.log(allDivs);
 
     if (n == 0) {
-    
-        if(currTime>5)
-        {
-            currTrack.currentTime=0;
+
+        if (currTime > 5) {
+            currTrack.currentTime = 0;
             currTrack.play();
             currDiv.querySelector(".card-body #controls #play").className = "fas fa-pause";
         }
-        else{
+        else {
             currDiv.querySelector(".card-body #controls #play").className = "fas fa-play-circle";
             var len = allDivs.length;
             var nextDiv = allDivs[len - 1];
@@ -336,13 +330,12 @@ function backward(e, n) {
 
     }
     else {
-        if(currTime>5)
-        {
-            currTrack.currentTime=0;
+        if (currTime > 5) {
+            currTrack.currentTime = 0;
             currTrack.play();
             currDiv.querySelector(".card-body #controls #play").className = "fas fa-pause";
         }
-        else{
+        else {
             currDiv.querySelector(".card-body #controls #play").className = "fas fa-play-circle";
             var nextDiv = allDivs[n - 1];
             // var track = nextDiv.querySelector(".card-body #myaudio");
@@ -351,7 +344,7 @@ function backward(e, n) {
             track.click();
             console.log(track);
             console.log(nextDiv);
-            }
+        }
     }
 
 }
@@ -404,8 +397,7 @@ function media(e, val) {
             seeker.value = time;
             console.log(name);
             let currName = div.querySelector("#name").innerHTML;
-            if(document.getElementById("setName").innerHTML==currName)
-            {
+            if (document.getElementById("setName").innerHTML == currName) {
                 let btmseeker = document.querySelector("#bs");
                 console.log(btmseeker);
                 btmseeker.value = time;
@@ -430,7 +422,7 @@ function updateseekertime(e) {
     let div = e.parentElement;
     let value = div.querySelector("#seek").value;
     console.log(value);
-    
+
     let track = div.querySelector("#myaudio");
     let duration = parseInt(track.duration);
     console.log(duration);
@@ -439,9 +431,8 @@ function updateseekertime(e) {
 
     let cardName = div.querySelector("#name").innerHTML;
     let btmName = document.querySelector("#setName").innerHTML;
-    if(cardName==btmName)
-    {
-        console.log(cardName,btmName);
+    if (cardName == btmName) {
+        console.log(cardName, btmName);
         let btmseeker = document.querySelector("#bs");
         btmseeker.value = value;
     }
@@ -454,14 +445,22 @@ function updatebottomseekertime(e) {
     for (let i = 0; i < ele.length; i++) {
         allContent.push(ele[i]);
     }
-
     var div = e.parentElement.parentElement;
     var val = document.querySelector("#bs").value;
+    console.log(val)
     var name = div.querySelector("#setName").innerHTML;
     for (let i = 0; i < allContent.length; i++) {
         var song = allContent[i].querySelector(".card-body #name").innerHTML;
         if (song == name) {
+            let track = allContent[i].querySelector("#myaudio");
+            let duration = parseInt(track.duration);
+            console.log(duration);
+            let time = parseInt((duration * val) / 100);
+            track.currentTime = time;
             allContent[i].querySelector(".card-body #seek").value = val;
+            // allContent[i].querySelector(".card-body #myaudio").currentTime = val;
+            console.log("out")
+
         }
     }
 }
